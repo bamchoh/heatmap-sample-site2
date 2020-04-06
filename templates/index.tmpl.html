@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="heatmap test">
+    <meta name="author" content="bamchoh">
+
+    <title>Heatmap Test</title>
+
+    <link href="assets/css/heatmap.css" rel="stylesheet" />
+    <link href="assets/css/loading.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <h1>URL 一覧</h1>
+    <ul>
+      {{range $url := .urls}}
+      <li><a href="/?url={{$url}}">{{$url}}</a></li>
+      {{else}}
+      いまのところ、登録されたURLはありません。
+      {{end}}
+    </ul>
+    <h1 id="title">{{.url}}</h1>
+    <div class="hidden" id="error">
+    </div>
+    <div class="container">
+      <div class="heatmap">
+      </div>
+      <div id="loading">
+        <div class="loader"></div>
+      </div>
+    </div>
+    <script src="assets/js/heatmap.min.js"></script>
+    <script src="assets/js/test-heatmap.js"></script>
+  </body>
+</html>
